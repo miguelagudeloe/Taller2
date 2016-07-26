@@ -7,7 +7,311 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>velocidad = 4;
+
+LlaveMorada = false;
+LlaveRoja   = false;
+LlaveDorada = false;
+LlaveNegra  = false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Movimiento del Jugador
+   
+if (keyboard_check(vk_right)){x = x+velocidad;}
+if (keyboard_check(vk_up)){y = y-velocidad;}
+if (keyboard_check(vk_down)){y = y+velocidad;}
+if (keyboard_check(vk_left)){x = x-velocidad;}
+
+if (keyboard_check(vk_left))
+   {
+if (!place_meeting(x-velocidad,y,objPuertaPadre))
+{x = x-velocidad;}
+   }
+   
+   if (keyboard_check(vk_right))
+   {
+if (!place_meeting(x+velocidad,y,objPuertaPadre))
+{x = x+velocidad;}
+   }
+   
+   if (keyboard_check(vk_up))
+   {
+if (!place_meeting(x,y-velocidad,objPuertaPadre))
+{y = y-velocidad;}
+   }
+   
+   if (keyboard_check(vk_down))
+   {
+if (!place_meeting(x,y+velocidad,objPuertaPadre))
+{y = y+velocidad;}
+   }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gestión de llaves
+
+if (place_meeting(x,y, objLlaveRoja))
+   {with(objLlaveRoja){instance_destroy();}
+   LlaveRoja = true;
+   audio_play_sound(sndDiamond, 10, false);
+   }
+   
+   if (place_meeting(x,y, objLlaveNegra))
+   {with(objLlaveNegra){instance_destroy();}
+   LlaveNegra = true;
+   audio_play_sound(sndDiamond, 10, false);
+   }
+   
+   if (place_meeting(x,y, objLlaveDorada))
+   {with(objLlaveDorada){instance_destroy();}
+   LlaveDorada = true;
+   audio_play_sound(sndDiamond, 10, false);
+   }
+   
+   if (place_meeting(x,y, objLlaveMorada))
+   {with(objLlaveMorada){instance_destroy();}
+   LlaveMorada = true;
+   audio_play_sound(sndDiamond, 10, false);
+   }
+   
+  
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gestión de Puertas
+
+if(LlaveRoja)
+     {
+     if(place_meeting(x+velocidad, y, objPuertaRoja))||
+     (place_meeting(x-velocidad, y, objPuertaRoja))||
+     (place_meeting(x,y-velocidad, objPuertaRoja))||
+     (place_meeting(x,y+velocidad, objPuertaRoja))
+         {
+         with(objPuertaRoja){instance_destroy();}
+         audio_play_sound(sndDoor, 10, false);
+         }
+     }
+     
+if(LlaveDorada)
+     {
+     if(place_meeting(x+velocidad, y, objPuerta))||
+     (place_meeting(x-velocidad, y, objPuerta))||
+     (place_meeting(x,y-velocidad, objPuerta))||
+     (place_meeting(x,y+velocidad, objPuerta))
+         {
+         with(objPuerta){instance_destroy();}
+         audio_play_sound(sndDoor, 10, false);
+         }
+     }
+     
+if(LlaveNegra)
+     {
+     if(place_meeting(x+velocidad, y, objPuertaNegra))||
+     (place_meeting(x-velocidad, y, objPuertaNegra))||
+     (place_meeting(x,y-velocidad, objPuertaNegra))||
+     (place_meeting(x,y+velocidad, objPuertaNegra))
+         {
+         with(objPuertaNegra){instance_destroy();}
+         audio_play_sound(sndDoor, 10, false);
+         }
+     }
+     
+if(LlaveMorada)
+     {
+     if(place_meeting(x+velocidad, y, objPuertaMorada))||
+     (place_meeting(x-velocidad, y, objPuertaMorada))||
+     (place_meeting(x,y-velocidad, objPuertaMorada))||
+     (place_meeting(x,y+velocidad, objPuertaMorada))
+         {
+         with(objPuertaMorada){instance_destroy();}
+         audio_play_sound(sndDoor, 10, false);
+         }
+     }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPuertaPadre">
+      <action>
+        <libid>1</libid>
+        <id>101</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>000010000</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemigoPadre">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
+audio_play_sound(sndDead, 10, false);
+room_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objMeta">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(sndMeta, 10, false);
+
+if (room_exists(room_next(room)))
+    {room_goto_next();}
+    else
+    {room_goto(Inicio);}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objMuro">
+      <action>
+        <libid>1</libid>
+        <id>101</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>000010000</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
