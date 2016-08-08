@@ -62,11 +62,11 @@
     <object>objects\objInicio</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Nivel4</room>
     <room>rooms\Inicio</room>
     <room>rooms\Nivel1</room>
     <room>rooms\Nivel2</room>
     <room>rooms\Nivel3</room>
+    <room>rooms\Nivel4</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
