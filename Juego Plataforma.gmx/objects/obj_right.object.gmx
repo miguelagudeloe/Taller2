@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_player</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Inicialización de las variables
 
-grav = 0.5;
+grav = 0.2;
 hsp = 0;
 vsp = 0;
 movespeed = 4;
@@ -109,8 +109,8 @@ sprite_index = spr_ball;
           <argument>
             <kind>1</kind>
             <string>/// Movimiento del personaje
- if (keyboard_check(vk_left)){ 
-      with(obj_ball){
+ if (keyboard_check(vk_right)){ 
+      with(obj_left){
        instance_change(obj_left, false);
     }
     }
@@ -119,14 +119,14 @@ sprite_index = spr_ball;
 
 key_right = keyboard_check(vk_right);
 key_left = keyboard_check(vk_left);
-key_up = keyboard_check(vk_up);
+key_space = keyboard_check(vk_space);
 
 // Operaciónes con las entradas del teclado
 move = key_right - key_left;
 hsp = move * movespeed;
 if (vsp &lt; 10) {vsp += grav;}
 if(place_meeting(x, y+1, obj_muro)){
-vsp = key_up * -jumpspeed;
+vsp = key_space * -jumpspeed;
 }
 
 

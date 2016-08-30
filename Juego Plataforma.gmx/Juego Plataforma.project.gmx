@@ -4,27 +4,59 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_killmonster</sound>
+    <sound>sound\snd_killcharacter</sound>
+    <sound>sound\snd_getmushroom</sound>
+    <sound>sound\snd_finishlevel</sound>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_muro</sprite>
+    <sprite>sprites\spr_muroh</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_powerup</sprite>
     <sprite>sprites\spr_ball_b</sprite>
     <sprite>sprites\spr_left</sprite>
-    <sprite>sprites\spr_jump</sprite>
+    <sprite>sprites\spr_climb</sprite>
     <sprite>sprites\spr_enemyright</sprite>
+    <sprite>sprites\spr_life</sprite>
+    <sprite>sprites\spr_ammunition</sprite>
+    <sprite>sprites\spr_murov</sprite>
+    <sprite>sprites\spr_muro</sprite>
+    <sprite>sprites\spr_ladder</sprite>
+    <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_monsterdead</sprite>
+    <sprite>sprites\spr_flyerleft</sprite>
+    <sprite>sprites\spr_flyer</sprite>
+    <sprite>sprites\spr_enemyleft</sprite>
+    <sprite>sprites\spr_mushroom</sprite>
+    <sprite>sprites\spr_level</sprite>
+    <sprite>sprites\spr_bonus</sprite>
+    <sprite>sprites\spr_death</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\sky</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_muro</object>
-    <object>objects\obj_ball</object>
+    <object>objects\obj_muroh</object>
     <object>objects\obj_left</object>
     <object>objects\obj_climb</object>
     <object>objects\obj_powerup</object>
     <object>objects\obj_enemyright</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_controller</object>
+    <object>objects\obj_ammunition</object>
+    <object>objects\obj_muro</object>
+    <object>objects\obj_murov</object>
+    <object>objects\obj_ladder</object>
+    <object>objects\obj_murocontrol</object>
+    <object>objects\obj_bullet</object>
+    <object>objects\obj_monsterdead</object>
+    <object>objects\obj_flyerleft</object>
+    <object>objects\obj_mushroom</object>
+    <object>objects\obj_level</object>
+    <object>objects\obj_bonus</object>
+    <object>objects\obj_death</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
